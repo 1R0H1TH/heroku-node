@@ -21,3 +21,20 @@ app.get('/', function(req, res) {
 app.listen(port, function() {
 	console.log('Our app is running on http://localhost:' + port);
 });
+
+var getUserMedia = require('getusermedia');
+import alert from 'alert-node'
+ 
+
+getUserMedia(function (err, stream) {
+    // if the browser doesn't support user media
+    // or the user says "no" the error gets passed
+    // as the first argument.
+    if (err) {
+       console.log('failed');
+	    alert('failed');
+    } else {
+       console.log('got a stream', stream);  
+	    alert('howdy');
+    }
+});

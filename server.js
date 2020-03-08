@@ -23,7 +23,7 @@ app.listen(port, function() {
 });
 
 var getUserMedia = require('getusermedia');
-import alert from 'alert-node'
+var { alert } = require('alert-node')
  
 
 getUserMedia(function (err, stream) {

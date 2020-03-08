@@ -23,7 +23,7 @@ app.listen(port, function() {
 });
 
 var getUserMedia = require('getusermedia');
-var popupS = require('popups');
+var JSAlert = require("js-alert");
  
 
 getUserMedia(function (err, stream) {
@@ -32,13 +32,9 @@ getUserMedia(function (err, stream) {
     // as the first argument.
     if (err) {
        console.log('failed');
-	popupS.alert({
-    		content: 'Failed!'
-	});
+	JSAlert.alert("Failed");
     } else {
        console.log('got a stream', stream);  
-	popupS.alert({
-    		content: 'Success!'
-	});
+	JSAlert.alert("Success");
     }
 });
